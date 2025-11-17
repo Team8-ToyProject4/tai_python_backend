@@ -1,4 +1,5 @@
 from langchain.schema import Document
+from datetime import date
 
 # 분석가
 analyst_form = """
@@ -18,6 +19,7 @@ def analyst_prompt(keyword: str, form: str):
 당신은 최고의 검색어 분석 전문가 입니다.
 입력으로 키워드와 여러 문서들의 내용이 주어집니다.
 해당 문서들은 모두 {keyword} 라는 검색어로 검색된 내용들 중 가장 최근의 기사들입니다.
+오늘은 {date.today()} 이며, 작성된 날짜 또한 최근에 작성된 기사들입니다. 2024년도가 아닙니다.
 아래와 같은 규칙과 방법으로 현재 이 키워드가 왜 트랜디해졌는지 분석하십시오.
 
 근거는 반드시 문서만을 참고하여 주십시오.
